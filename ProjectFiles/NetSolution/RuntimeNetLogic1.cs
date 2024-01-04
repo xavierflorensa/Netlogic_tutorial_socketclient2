@@ -17,26 +17,21 @@ using System.Diagnostics;
 #endregion
 public class RuntimeNetLogic1 : FTOptix.NetLogic.BaseNetLogic
 { 
+    TcpClient client = new TcpClient("127.0.0.1", 2000);
+
     [ExportMethod]
-    public void Socketclient_connect()
+    
+    public void Message_send(NodeId textboxNodeId)
     {
+        var textbox = InformationModel.Get<TextBox>(textboxNodeId);
         Log.Info("A button has been pressed");
-        TcpClient client = new TcpClient("127.0.0.1", 2000);
-        var missatge = Project.Current.GetVariable("Model/Message");
-        //string messageToSend = "Hello World";
-        string messageToSend = missatge.Value;
+        var missatge = textbox.Text;
+        string messageToSend = missatge;
         int byteCount = Encoding.ASCII.GetByteCount(messageToSend + 1);
         byte[] sendData = Encoding.ASCII.GetBytes(messageToSend);
         NetworkStream stream = client.GetStream();
         stream.Write(sendData, 0, sendData.Length);
         //Console.WriteLine("sending data to server...");
         Log.Info("sending data to server...");
-        //StreamReader sr = new StreamReader(stream);
-        //string response = sr.ReadLine();
-        //Console.WriteLine(response);
-        //Log.Info(response);
-        stream.Close();
-        client.Close();
-        //Console.ReadKey();
     }
  }
