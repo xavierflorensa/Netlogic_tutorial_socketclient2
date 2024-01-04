@@ -1,7 +1,2 @@
 Name: Model
 Type: ModelCategoryFolder
-Children:
-- Name: Message
-  Type: BaseDataVariableType
-  DataType: String
-  Value: "Hello World"

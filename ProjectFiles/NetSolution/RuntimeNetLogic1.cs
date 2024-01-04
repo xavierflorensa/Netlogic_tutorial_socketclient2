@@ -25,6 +25,7 @@ public class RuntimeNetLogic1 : FTOptix.NetLogic.BaseNetLogic
     {
         var textbox = InformationModel.Get<TextBox>(textboxNodeId);
         Log.Info("A button has been pressed");
+        textbox.FontSize = 40;
         var missatge = textbox.Text;
         string messageToSend = missatge;
         int byteCount = Encoding.ASCII.GetByteCount(messageToSend + 1);
