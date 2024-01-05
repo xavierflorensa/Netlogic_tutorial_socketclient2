@@ -353,7 +353,7 @@ Children:
       Type: BaseDataVariableType
       DataType: LocalizedText
       ModellingRule: Optional
-      Value: {"LocaleId":"en-US","Text":"Send Message"}
+      Value: {"LocaleId":"en-US","Text":"Send Message to Server"}
     - Name: LeftMargin
       Type: BaseVariableType
       DataType: Size
@@ -368,7 +368,7 @@ Children:
       Type: BaseVariableType
       DataType: Size
       ModellingRule: Optional
-      Value: 200.0
+      Value: 300.0
     - Name: FontSize
       Type: BaseDataVariableType
       DataType: Size
